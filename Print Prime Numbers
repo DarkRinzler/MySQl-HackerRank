@@ -1,0 +1,40 @@
+Write a query to print all prime numbers less than or equal to . Print your result on a single line, and use the ampersand () character as your separator (instead of a space).
+
+Solution:
+
+DELIMITER //
+CREATE PROCEDURE Prime()
+BEGIN
+    DECLARE var INT;
+    DECLARE prime INT;
+    DECLARE output VARCHAR(1000);
+    DECLARE ind INT;
+
+    SET var = 2;
+
+    WHILE var <= 1000 DO
+        SET prime = 1;
+        SET ind = 2;
+
+        WHILE ind < var DO
+            IF var % ind = 0 THEN
+                SET prime = 0;
+            END IF;
+            SET ind = ind + 1;
+        END WHILE;
+
+        IF prime = 1 THEN
+            IF LENGTH(output) > 0 THEN
+                SET output = CONCAT(output, '&', var);
+            ELSE
+                SET output = CONCAT(var);
+            END IF;
+        END IF;
+
+        SET var = var + 1;
+    END WHILE;
+    SELECT output;
+END //
+DELIMITER ;
+
+CALL Prime();
