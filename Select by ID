@@ -1,4 +1,6 @@
 Query all columns for a city in CITY with the ID 1661.
 
+Solution:
+
 SELECT * FROM CITY          
 WHERE CITY.ID = '1661';
