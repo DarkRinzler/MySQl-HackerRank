@@ -1,2 +1,2 @@
 # MySQl-HackerRank
-The repository contains the solution of the MySql challenges in the HackerRank website.
+The repository contains the solutions of the MySql challenges on the HackerRank website.
