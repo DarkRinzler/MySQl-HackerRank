@@ -2,10 +2,12 @@ Query the list of CITY names starting with vowels (i.e., a, e, i, o, or u) from 
 
 Solution:
 
-Method 1:
+Method_1:
+
 SELECT DISTINCT STATION.CITY FROM STATION 
 WHERE LEFT(STATION.CITY,1) IN ('a','e','i','u','o','A','E','I','U','O');
 
-Methods 2:
+Methods_2:
+
 SELECT DISTINCT STATION.CITY FROM STATION 
 WHERE STATION.CITY REGEXP '^[Aeiouaeiou]';
